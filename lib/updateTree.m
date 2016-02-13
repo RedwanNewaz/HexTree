@@ -23,7 +23,7 @@ function [center,maxI,index]=updateParentLocation(edges,BaseCost)
         switch index
             case 1
                 [x,y]=intersection(edges(6),edges(1));
-                x=x+0.9;y=y+0.5;
+                x=x+2*0.9;y=y+2*0.5;
             case 2
                 [x,y]=intersection(edges(3),edges(1));
             case 3

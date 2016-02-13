@@ -2,7 +2,6 @@ close all ;clc;clear all;
 set(0,'RecursionLimit',800)
 addpath('lib')
 addpath('RRT')
-addpath('errorbar_groups')
 area=[30 30];
 
 % robot =[2,2]; %good result found
@@ -75,8 +74,7 @@ hex_tree_path=    path_length(sampled_path)
 
 
 figure
-
-sim_analyzer( area,goal,robot,neigbours,sampled_path,vertices,edges)
-
+sim_analyzer( area,goal,robot,neigbours,sampled_path,neigbours,sampled_path)
+    
     
     

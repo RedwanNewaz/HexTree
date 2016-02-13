@@ -19,7 +19,7 @@ delta = 5;
     
 for loop=1:10
     %% RHexInfoTree
-    [ sampled_path, neigbours, returnPath ] = hexTree( robot,goal,area,0 );
+    [ sampled_path, neigbours, returnPath ] = hexTree( robot,goal,area );
     %% RRT 
     [vertices, edges, path] = rrt(map, robot, goal, k, delta_q, p);
     path_smooth = smooth(map, path, vertices, delta);
@@ -32,13 +32,12 @@ end
 
 %% data plot
 figure
-sim_analyzer( area,goal,robot,neigbours,sampled_path,vertices,edges);
+sim_analyzer( area,goal,robot,neigbours,sampled_path,vertices,edges)
 %statistical data plot
 subplot(2,2,4)
-title('statistical performance analysis')
 measY=[rrt_path hex_tree_path];
 mean_y=mean(measY);
 err_y=sqrt(var(measY));
-errorbar_groups(mean_y,err_y);    
+errorbar_groups(mean_y,err_y)    
 
     

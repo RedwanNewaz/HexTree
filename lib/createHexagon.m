@@ -4,8 +4,8 @@ function [ vertices ] = createHexagon( sp,shift )
 
 if (nargin==1)
     theta = 0:60:360;
-    x =sp(2)+ cosd(theta);
-    y = sp(1)+sind(theta);
+    x =sp(2)+  2*cosd(theta);
+    y = sp(1)+ 2*sind(theta);
     vertices=[y' x'];  
 else
     theta = 0:60:360;
